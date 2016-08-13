@@ -1,6 +1,6 @@
-# android_device_samsung_gprimeltetmo
+# android_vendor_samsung_gprimeltetmo
 
-## Device tree for Samsung Galaxy Grand Prime G530-FZ [grimeltetmo]
+## Vendor tree for Samsung Galaxy Grand Prime G530-FZ [grimeltetmo]
 
 Basic   | Spec Sheet
 -------:|:-------------------------
@@ -14,13 +14,10 @@ MicroSD | Up to 64 GB
 Battery | 2600 mAh (removable)
 Dimensions | 144.8 x 72.1 x 8.6 mm
 Display | 540 x 960 (qHD), 5.0" (126.4mm)
-Rear Camera  | 8.0 MP, LED flash, S.LSI. S5K4H5YB
+Rear Camera  | 8.0 MP, LED flash, IMX219
 Front Camera | 5.0 MP, S.LSI. S5K5E3YX
-
-Check the [`local_manifest`](./local_manifest) directory
-
 
 ## Credits:
 - [x] Grand Prime SM-G530FZ (codename:fortuna) contributors (https://github.com/GrandPrime)
 - [x] Grand Prime SM-G530H (codename:fortuna3g) contributors (https://github.com/ZIM555)
->>>>>>> 4c44368d1e5d8da3805a4df86840a2b07f543809
+>>>>>>> e6aadefb766c334d58ae767e806850f74010e6f5
