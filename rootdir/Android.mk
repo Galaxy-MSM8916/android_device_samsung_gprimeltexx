@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
-
+ifeq ($(TARGET_DEVICE),gprimeltetmo)
 ######################
 ### fstab.qcom
 include $(CLEAR_VARS)
@@ -212,3 +212,5 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := ../recovery/$(LOCAL_MODULE)
 LOCAL_MODULE_PATH  := $(TARGET_RECOVERY_ROOT_OUT)/etc
 include $(BUILD_PREBUILT)
+
+endif
