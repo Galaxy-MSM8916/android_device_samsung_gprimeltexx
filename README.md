@@ -1,4 +1,4 @@
-# android_vendor_samsung_gprimeltetmo
+# android_vendor_samsung_gprimeltexx
 
 ## Vendor tree for Samsung Galaxy Grand Prime G530-FZ [grimeltetmo]
 

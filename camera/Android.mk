@@ -1,5 +1,5 @@
 ifeq ($(TARGET_PROVIDES_CAMERA_HAL),true)
-ifeq ($(TARGET_DEVICE),gprimeltetmo)
+ifeq ($(TARGET_DEVICE),gprimeltexx)
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 

@@ -1,3 +1,3 @@
-LOCAL_PATH := device/samsung/gprimeltetmo
+LOCAL_PATH := device/samsung/gprimeltexx
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_gprimeltetmo.mk
+    $(LOCAL_DIR)/full_gprimeltexx.mk

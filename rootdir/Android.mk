@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
-ifeq ($(TARGET_DEVICE),gprimeltetmo)
+ifeq ($(TARGET_DEVICE),gprimeltexx)
 ######################
 ### fstab.qcom
 include $(CLEAR_VARS)

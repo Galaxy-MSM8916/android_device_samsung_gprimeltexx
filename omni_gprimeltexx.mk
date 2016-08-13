@@ -15,7 +15,7 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/samsung/gprimeltetmo/full_gprimeltetmo.mk)
+$(call inherit-product, device/samsung/gprimeltexx/full_gprimeltexx.mk)
 
 # Device identifier. This must come after all inclusions
 # Release name
@@ -25,8 +25,8 @@ PRODUCT_RELEASE_NAME := Samsung Galaxy Grand Prime
 TARGET_SCREEN_WIDTH := 540
 TARGET_SCREEN_HEIGHT := 960
 
-PRODUCT_DEVICE := gprimeltetmo
-PRODUCT_NAME := omni_gprimeltetmo
+PRODUCT_DEVICE := gprimeltexx
+PRODUCT_NAME := omni_gprimeltexx
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G530FZ
 PRODUCT_MANUFACTURER := samsung

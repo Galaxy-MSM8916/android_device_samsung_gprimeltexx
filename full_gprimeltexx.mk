@@ -18,14 +18,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from device.mk
-$(call inherit-product, device/samsung/gprimeltetmo/device.mk)
+$(call inherit-product, device/samsung/gprimeltexx/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := gprimeltetmo
-PRODUCT_NAME := full_gprimeltetmo
+PRODUCT_DEVICE := gprimeltexx
+PRODUCT_NAME := full_gprimeltexx
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G530W
 PRODUCT_MANUFACTURER := samsung
 
 
-$(call inherit-product-if-exists, vendor/samsung/gprimeltetmo/gprimeltetmo-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/gprimeltexx/gprimeltexx-vendor.mk)
