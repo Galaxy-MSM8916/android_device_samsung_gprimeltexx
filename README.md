@@ -1,14 +1,14 @@
 # android_vendor_samsung_gprimeltexx
 
-## Vendor tree for Samsung Galaxy Grand Prime G530-FZ [grimeltetmo]
+## Vendor tree for Samsung Galaxy Grand Prime G530-FZ [grimeltexx]
 
 Basic   | Spec Sheet
 -------:|:-------------------------
 CPU     | Qualcomm MSM8916 Quad-core 1.2 GHz ARM® Cortex™ A53
 CHIPSET | Qualcomm MSM8916 Snapdragon 410
 GPU     | Adreno 306
-Memory  | 1.5 GB
-Shipped Android Version | 5.1.1
+Memory  | 1 GB
+Shipped Android Version | 5.0.2
 Storage | 8 GB
 MicroSD | Up to 64 GB
 Battery | 2600 mAh (removable)
