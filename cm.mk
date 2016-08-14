@@ -18,7 +18,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 PRODUCT_DEVICE := gprimeltexx
 PRODUCT_NAME := cm_gprimeltexx
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-G530W
+PRODUCT_MODEL := SM-G530FZ
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_CHARACTERISTICS := phone
 
