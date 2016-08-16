@@ -90,6 +90,9 @@ EXTENDED_FONT_FOOTPRINT := true
 #TARGET_GPS_HAL_PATH := $(LOCAL_PATH)/gps
 #TARGET_NO_RPC := true
 
+# Healthd
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.qcom
+
 #ART
 #WITH_DEXPREOPT := true
 
