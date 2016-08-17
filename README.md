@@ -1,6 +1,6 @@
-# android_vendor_samsung_gprimeltexx
+# android_device_samsung_gprimeltexx
 
-## Vendor tree for Samsung Galaxy Grand Prime G530-FZ [grimeltexx]
+## Device tree for Samsung Galaxy Grand Prime G530-FZ [grimeltexx]
 
 Basic   | Spec Sheet
 -------:|:-------------------------
@@ -20,4 +20,3 @@ Front Camera | 5.0 MP, S.LSI. S5K5E3YX
 ## Credits:
 - [x] Grand Prime SM-G530FZ (codename:fortuna) contributors (https://github.com/GrandPrime)
 - [x] Grand Prime SM-G530H (codename:fortuna3g) contributors (https://github.com/ZIM555)
->>>>>>> e6aadefb766c334d58ae767e806850f74010e6f5
