@@ -172,6 +172,7 @@ PRODUCT_PACKAGES += \
 
 # libhealthd.qcom
 PRODUCT_PACKAGES += \
+    libhealthd.qcom \
     libhealthd
 
 # Lights
@@ -197,8 +198,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
     ro.adb.secure=0 \
     ro.debuggable=1 \
-    persist.service.adb.enable=1 \
-    ro.telephony.ril_class=SamsungQcomRIL
+    persist.service.adb.enable=1
+#    ro.telephony.ril_class=SamsungQcomRIL
 
 # GPS
 #PRODUCT_PACKAGES += \
@@ -313,8 +314,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.pip.gated=0 \
     ro.product.model=SM-G530FZ \
     ro.product.device=gprimeltexx \
-    cm.updater.uri=http://grandprime.ddns.net/api \
-    ro.telephony.ril_class=SamsungQcomRIL
+    cm.updater.uri=http://grandprime.ddns.net/api
+#    ro.telephony.ril_class=SamsungQcomRIL
 
 # Ril
 PRODUCT_PACKAGES += \
