@@ -6,6 +6,7 @@
 #
 
 ro.sf.lcd_density=240
+ro.chipname=MSM8916
 
 # Evolution RIL (8xxx)
 rild.libpath=/system/lib/libsec-ril.so

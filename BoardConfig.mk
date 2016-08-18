@@ -187,14 +187,18 @@ BOARD_SEPOLICY_UNION += \
 	file.te \
 	shell.te \
 	surfaceflinger.te \
+	bluetooth.te \
 	bluetooth_loader.te \
 	wcnss_service.te \
 	healthd.te \
+	kernel.te \
+	property.te \
 	rild.te \
 	qseecomd.te \
 	system_server.te \
 	time_daemon.te \
 	sysinit.te \
+	system_app.te \
 	mm-qcamerad.te \
 	file_contexts \
 	init_shell.te \
@@ -206,6 +210,7 @@ BOARD_SEPOLICY_UNION += \
 	keystore.te \
 	perfd.te \
 	mediaserver.te \
+	vold.te
 	property_contexts
 
 # Time services
