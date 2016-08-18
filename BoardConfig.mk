@@ -210,7 +210,7 @@ BOARD_SEPOLICY_UNION += \
 	keystore.te \
 	perfd.te \
 	mediaserver.te \
-	vold.te
+	vold.te \
 	property_contexts
 
 # Time services
