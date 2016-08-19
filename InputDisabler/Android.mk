@@ -1,5 +1,4 @@
 LOCAL_PATH:= $(call my-dir)
-ifeq ($(TARGET_DEVICE),gprimeltexx)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
@@ -13,4 +12,3 @@ LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 
 include $(BUILD_PACKAGE)
-endif

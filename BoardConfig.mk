@@ -1,112 +1,39 @@
-FORCE_32_BIT := true
+# inherit from qcom-common
+-include device/samsung/qcom-common/BoardConfigCommon.mk
 
+# Inherit from the proprietary version
 -include vendor/samsung/gprimeltexx/BoardConfigVendor.mk
 
 LOCAL_PATH := device/samsung/gprimeltexx
 
-# Inherit from common
--include device/samsung/qcom-common/BoardConfigCommon.mk
+#BLOCK_BASED_OTA := false
 
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
-
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
-
-# Platform
-TARGET_ARCH := arm
-TARGET_BOARD_PLATFORM := msm8916
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_BOARD_PLATFORM_GPU       := qcom-adreno306
-#ARCH_ARM_HAVE_TLS_REGISTER := true
-
-# Architecture
-TARGET_CPU_SMP := true
-TARGET_CPU_VARIANT := cortex-a53
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-
-# Audio
-AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
-BOARD_USES_ALSA_AUDIO := true
-
-# Asserts
+# Assert
 TARGET_OTA_ASSERT_DEVICE := gprimeltexx,grandprimelte,samsung_sm_g530fz,g530fz
 
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_QCOM := true
-BLUETOOTH_HCI_USE_MCT := true
+# Platform
+TARGET_BOARD_PLATFORM           := msm8916
+TARGET_BOARD_PLATFORM_GPU       := qcom-adreno306
+TARGET_BOOTLOADER_BOARD_NAME    := MSM8916
 
-# Custom RIL class
-BOARD_RIL_CLASS    := ../../../device/samsung/gprimeltexx/ril
-PROTOBUF_SUPPORTED := true
+# Arch
+TARGET_GLOBAL_CFLAGS            += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS          += -mfpu=neon -mfloat-abi=softfp
+TARGET_CPU_VARIANT              := cortex-a53
+TARGET_CPU_CORTEX_A53           := true
+ARCH_ARM_HAVE_TLS_REGISTER      := true
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8916
+# Board CFLAGS
+COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
 
-# Camera
-TARGET_USE_VENDOR_CAMERA_EXT := true
-TARGET_PROVIDES_CAMERA_HAL := true
-USE_DEVICE_SPECIFIC_CAMERA := true
+# Qcom
+TARGET_PLATFORM_DEVICE_BASE          := /devices/soc.0/
+HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE   := true
+USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
+TARGET_USES_QCOM_BSP                 := true
+TARGET_USES_NEW_ION_API              :=true
 
-# Charger
-BOARD_CHARGER_ENABLE_SUSPEND := true
-BOARD_CHARGER_SHOW_PERCENTAGE := true
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
-
-# Enable QCOM FM feature
-AUDIO_FEATURE_ENABLED_FM := true
-BOARD_HAVE_QCOM_FM := true
-
-#sec_s3fwrn5 <- NFC HAL
-
-# CMHW
-BOARD_HARDWARE_CLASS += $(LOCAL_PATH)/cmhw
-
-# Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-
-# default.prop
-ADDITIONAL_DEFAULT_PROPERTIES += \
-	camera2.portability.force_api=1
-
-# Display
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-MAX_EGL_CACHE_SIZE := 2048*1024
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-OVERRIDE_RS_DRIVER := libRSDriver.so
-TARGET_CONTINUOUS_SPLASH_ENABLED := true
-TARGET_HAVE_NEW_GRALLOC := true
-
-# Encryption
-TARGET_SWV8_DISK_ENCRYPTION := true
-
-# FM
-AUDIO_FEATURE_ENABLED_FM := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
-
-# Fonts
-EXTENDED_FONT_FOOTPRINT := true
-
-# GPS
-#TARGET_GPS_HAL_PATH := $(LOCAL_PATH)/gps
-#TARGET_NO_RPC := true
-
-# Healthd
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.qcom
-
-#ART
-#WITH_DEXPREOPT := true
-
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_gprimeltexx.cpp
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-TARGET_UNIFIED_DEVICE := true
-TARGET_PROVIDES_INIT_RC := true
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
@@ -121,12 +48,6 @@ TARGET_KERNEL_VARIANT_CONFIG := msm8916_sec_fortuna_eur_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 TARGET_KERNEL_SELINUX_LOG_CONFIG := selinux_log_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/grandprime
-
-# Lights
-TARGET_PROVIDES_LIBLIGHT := false
-
-# malloc implementation
-MALLOC_IMPL := dlmalloc
 
 # Partition sizes
 TARGET_USERIMAGES_USE_EXT4          := true
@@ -143,36 +64,118 @@ BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_PARTITION_SIZE  := 5637124096
 BOARD_FLASH_BLOCK_SIZE              := 131072
 
-# Power
-TARGET_POWERHAL_VARIANT := qcom
-#CM_POWERHAL_EXTENSION := qcom
+# Wifi
+WLAN_CHIPSET := pronto
+BOARD_HAS_QCOM_WLAN              := true
+BOARD_HAS_QCOM_WLAN_SDK          := true
+BOARD_WLAN_DEVICE                := qcwcn
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+TARGET_PROVIDES_WCNSS_QMI        := true
+TARGET_USES_QCOM_WCNSS_QMI       := true
+TARGET_USES_WCNSS_CTRL           := true
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+WIFI_DRIVER_FW_PATH_STA          := "sta"
+WIFI_DRIVER_FW_PATH_AP           := "ap"
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_NAME          := "wlan"
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_HAVE_BLUETOOTH                        := true
+BOARD_HAVE_BLUETOOTH_QCOM                   := true
+BLUETOOTH_HCI_USE_MCT                       := true
+
+# Custom RIL class
+BOARD_RIL_CLASS                     := ../../../device/samsung/gprimeltexx/ril/
+PROTOBUF_SUPPORTED                  := true
+
+# Fonts
+EXTENDED_FONT_FOOTPRINT             := true
+
+# malloc implementation
+MALLOC_IMPL                         := dlmalloc
+
+# Vendor Init
+TARGET_UNIFIED_DEVICE               := true
+TARGET_INIT_VENDOR_LIB              := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE         := $(LOCAL_PATH)/init/init_gprimeltexx.c
+
+# Audio
+TARGET_QCOM_AUDIO_VARIANT            := caf
+BOARD_USES_ALSA_AUDIO                := true
+
+# Charger
+BOARD_CHARGER_SHOW_PERCENTAGE        := true
+BOARD_CHARGER_ENABLE_SUSPEND         := true
+BOARD_CHARGING_MODE_BOOTING_LPM      := /sys/class/power_supply/battery/batt_lp_charging
+
+# Enable QCOM FM feature
+AUDIO_FEATURE_ENABLED_FM             := true
+
+# Enable HW based full disk encryption
+TARGET_HW_DISK_ENCRYPTION            := true
+
+# Build our own PowerHAL
+TARGET_POWERHAL_VARIANT              := qcom
+CM_POWERHAL_EXTENSION                := qcom
+
+# Vold
+TARGET_USE_CUSTOM_LUN_FILE_PATH      := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS  := true
+BOARD_VOLD_MAX_PARTITIONS            := 65
+
+# Camera
+TARGET_PROVIDES_CAMERA_HAL           := true
+USE_DEVICE_SPECIFIC_CAMERA           := true
+
+# CMHW
+BOARD_HARDWARE_CLASS += $(LOCAL_PATH)/cmhw
+
+# Workaround to avoid issues with legacy liblights on QCOM platforms
+TARGET_PROVIDES_LIBLIGHT            := true
 
 # Media
 TARGET_QCOM_MEDIA_VARIANT           := caf
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS    := true
 
-# Qualcomm support
-TARGET_USES_QCOM_BSP := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
-#HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE   := true
-#USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
-#TARGET_USES_NEW_ION_API := true
+# Display
+TARGET_CONTINUOUS_SPLASH_ENABLED      := true
+TARGET_USES_OVERLAY 		        := true
+TARGET_HARDWARE_3D		            := false
+TARGET_HAVE_HDMI_OUT 		        := false
+USE_OPENGL_RENDERER                 := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS       := 3
+MAX_EGL_CACHE_KEY_SIZE                := 12*1024
+MAX_EGL_CACHE_SIZE                    := 2048*1024
+OVERRIDE_RS_DRIVER                    := libRSDriver.so
 
-#Includes
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+# Boot animation
+TARGET_SCREEN_WIDTH                 := 540
+TARGET_SCREEN_HEIGHT                := 960
 
 # Recovery
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-BOARD_SUPPRESS_EMMC_WIPE := true
-TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := false
+TARGET_RECOVERY_FSTAB 				:= $(LOCAL_PATH)/rootdir/fstab.qcom
+TARGET_USERIMAGES_USE_EXT4 			:= true
+BOARD_HAS_LARGE_FILESYSTEM			:= true
+TARGET_RECOVERY_DENSITY 			:= hdpi
+BOARD_HAS_NO_MISC_PARTITION 		:= true
+BOARD_HAS_NO_SELECT_BUTTON 			:= true
+BOARD_RECOVERY_SWIPE 				:= true
+BOARD_USE_CUSTOM_RECOVERY_FONT 	    := \"roboto_23x41.h\"
+BOARD_USES_MMCUTILS 				:= true
+#RECOVERY_VARIANT				    := cm
 
-# RIL
-TARGET_RIL_VARIANT := caf
-#override to enable audio.
-BOARD_PROVIDES_LIBRIL := false
+# Logging
+TARGET_USES_LOGD                    := false
+	
+# Misc.
+TARGET_SYSTEM_PROP                              := $(LOCAL_PATH)/system.prop
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS                  := $(LOCAL_PATH)
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -213,63 +216,7 @@ BOARD_SEPOLICY_UNION += \
 	mediaserver.te \
 	vold.te \
 	property_contexts
-
-# Time services
-BOARD_USES_QC_TIME_SERVICES := true
-
-# TWRP
-#RECOVERY_VARIANT := twrp
-BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_SUPPRESS_SECURE_ERASE := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-RECOVERY_SDCARD_ON_DATA := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_MAX_BRIGHTNESS := 255
-TW_HAS_DOWNLOAD_MODE := true
-TW_HAS_MTP := true
-TW_INCLUDE_CRYPTO := true
-TW_INPUT_BLACKLIST := "accelerometer"
-TW_INTERNAL_STORAGE_PATH := "/data/media/0"
-TW_MTP_DEVICE := /dev/usb_mtp_gadget
-TW_NEW_ION_HEAP := true
-TW_NO_REBOOT_BOOTLOADER := true
-TW_NO_SCREEN_TIMEOUT := true
-TW_NO_USB_STORAGE := true
-TW_TARGET_USES_QCOM_BSP := true
-TW_THEME := portrait_hdpi
-ifeq ($(TW),)
-	TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
-else
-	TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
-endif
-
-# Vold
-BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
-BOARD_VOLD_MAX_PARTITIONS := 67
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-
-# Wifi
-WLAN_CHIPSET := pronto
-BOARD_HAS_QCOM_WLAN := true
-BOARD_HAS_QCOM_WLAN_SDK := true
-BOARD_HAVE_SAMSUNG_WIFI := true
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
-BOARD_WLAN_DEVICE := qcwcn
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
-TARGET_USES_QCOM_WCNSS_QMI := true
-TARGET_USES_WCNSS_CTRL := true
-WIFI_DRIVER_FW_PATH_AP := "ap"
-WIFI_DRIVER_FW_PATH_STA := "sta"
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-WIFI_DRIVER_MODULE_PATH  := "/system/lib/modules/wlan.ko"
-WIFI_DRIVER_MODULE_NAME := "wlan"
-
-# inherit from the proprietary version
--include vendor/samsung/gprimeltexx/BoardConfigVendor.mk
-
+    
 #make, move, symlink and strip the wlan kernel module.
 KERNEL_EXTERNAL_MODULES:
 	+$(MAKE) -C device/samsung/$(TARGET_DEVICE)/wlan/prima/ WLAN_ROOT=$(ANDROID_BUILD_TOP)/device/samsung/$(TARGET_DEVICE)/wlan/prima/ \
