@@ -183,6 +183,7 @@ BOARD_SEPOLICY_DIRS += \
     device/samsung/gprimeltexx/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+	audiod.te \
 	ueventd.te \
 	file.te \
 	shell.te \
