@@ -32,6 +32,7 @@ if [ -f /sys/devices/soc0/soc_id ]; then
 else
     platformid=`cat /sys/devices/system/soc/soc0/id`
 fi
+
 #
 # Function to start sensors for DSPS enabled platforms
 #
