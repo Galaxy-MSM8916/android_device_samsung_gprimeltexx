@@ -139,7 +139,7 @@ persist.hwc.enable_vds=1
 vidc.enc.narrow.searchrange=1
 
 # low RAM property
-ro.config.low_ram=true
+ro.config.low_ram=false
 
 # System property for storage_preload
 persist.sys.storage_preload=1

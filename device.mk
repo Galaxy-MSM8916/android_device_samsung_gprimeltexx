@@ -247,6 +247,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
     ro.adb.secure=0 \
     ro.debuggable=1 \
+    ro.config.zram=true \
     persist.service.adb.enable=1 \
     ro.telephony.ril_class=SamsungQcomRIL
 
@@ -270,6 +271,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.pip.gated=0 \
     ro.product.model=SM-G530FZ \
     ro.product.device=gprimeltexx \
+    ro.config.zram=true \
     cm.updater.uri=http://grandprime.ddns.net/api \
     ro.telephony.ril_class=SamsungQcomRIL
 
