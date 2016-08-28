@@ -205,8 +205,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libxml2 \
     Stk \
-	Stk2	
-	
+	Stk2
+
+# Misc
+PRODUCT_PACKAGES += \
+	curl \
+	libbson \
+	libcurl \
+	javax.btobex \
+	tcpdump \
+	libkeyutils \
+	libjpega \
+	libexifa \
+	charon
+
 # SoftAP
 PRODUCT_PACKAGES += \
     libcurl \
