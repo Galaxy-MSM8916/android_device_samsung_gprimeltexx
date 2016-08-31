@@ -132,6 +132,7 @@ TARGET_PROVIDES_CAMERA_HAL           := true
 USE_DEVICE_SPECIFIC_CAMERA           := true
 
 # CMHW
+BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += $(LOCAL_PATH)/cmhw
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
