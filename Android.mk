@@ -1,6 +1,7 @@
 ifeq ($(TARGET_DEVICE),gprimeltexx)
 LOCAL_PATH := $(call my-dir)
-include $(all-subdir-makefiles)
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
+include $(call all-makefiles-under,$(LOCAL_PATH))
 include $(CLEAR_VARS)
 
 endif
