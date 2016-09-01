@@ -27,5 +27,3 @@ PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G530FZ
 PRODUCT_MANUFACTURER := samsung
 
-
-$(call inherit-product-if-exists, vendor/samsung/gprimeltexx/gprimeltexx-vendor.mk)
