@@ -20,3 +20,4 @@ Front Camera | 5.0 MP, S.LSI. S5K5E3YX
 ## Credits:
 - [x] Grand Prime SM-G530FZ (codename:fortuna) contributors (https://github.com/GrandPrime)
 - [x] Grand Prime SM-G530H (codename:fortuna3g) contributors (https://github.com/ZIM555)
+- [x] Viper4Android by `ViPER520` (http://vipersaudio.com/blog/)
