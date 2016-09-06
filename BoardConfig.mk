@@ -20,6 +20,3 @@ TARGET_LIBINIT_DEFINES_FILE         := $(LOCAL_PATH)/init/init_gprimeltexx.c
 # Misc.
 TARGET_SYSTEM_PROP                              := $(LOCAL_PATH)/system.prop
 
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS                  := $(LOCAL_PATH)
-
