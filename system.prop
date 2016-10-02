@@ -5,7 +5,7 @@
 # system.prop for msm8916
 #
 
-ro.sf.lcd_density=240
+ro.sf.lcd_density=220
 ro.chipname=MSM8916
 
 # Evolution RIL (8xxx)
