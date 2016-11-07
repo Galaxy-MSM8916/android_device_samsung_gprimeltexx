@@ -194,6 +194,9 @@
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">10</integer>
 
+    <!-- If this is true, the message that USB is only being used for charging will be shown. -->
+    <bool name="config_usbChargingMessage">true</bool>
+
     <!-- Boolean indicating if current platform supports bluetooth wide band
          speech -->
     <bool name="config_bluetooth_wide_band_speech">false</bool>
@@ -248,9 +251,6 @@
 
     <!-- Flag specifying whether VoLTE TTY is supported -->
     <bool name="config_carrier_volte_tty_supported">true</bool>
-
-    <!-- bool value to for enabling motion accelerometer -->
-    <bool name="use_motion_accel">true</bool>
     
     <!-- default device has recents property -->
     <bool name="config_hasRecents">true</bool>
