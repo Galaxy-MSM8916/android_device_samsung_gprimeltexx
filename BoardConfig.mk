@@ -15,7 +15,8 @@ BOARD_SYSTEMIMAGE_PARTITION_TPE    := ext4
 BOARD_USERDATAIMAGE_PARTITION_SIZE  := 5637124096
 
 #Init
-TARGET_LIBINIT_DEFINES_FILE         := $(LOCAL_PATH)/init/init_gprimeltexx.c
+TARGET_INIT_VENDOR_LIB               := libinit_gprimeltexx
+TARGET_RECOVERY_DEVICE_MODULES       := libinit_gprimeltexx
 
 # Misc.
 TARGET_SYSTEM_PROP                              := $(LOCAL_PATH)/system.prop
