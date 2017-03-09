@@ -8,6 +8,9 @@
 ro.sf.lcd_density=220
 ro.chipname=MSM8916
 
+# ZRAM
+ro.config.zram=true
+
 # Evolution RIL (8xxx)
 rild.libpath=/system/lib/libsec-ril.so
 
@@ -128,7 +131,7 @@ ro.fm.transmitter=false
 #enable dsp gapless mode by default
 audio.offload.gapless.enabled=true
 
-af.resampler.quality=4
+# af.resampler.quality=4
 
 #property to enable user to access Google WFD settings
 persist.debug.wfd.enable=1
@@ -147,6 +150,7 @@ persist.sys.storage_preload=1
 # Data modules (For evolution RIL model)
 ro.use_data_netmgrd=false
 persist.data.netmgrd.qos.enable=false
+ro.vendor.extension_library=libqti-perfd-client.so
 
 # SAMP_SPCM
 sys.config.samp_spcm_enable=true
