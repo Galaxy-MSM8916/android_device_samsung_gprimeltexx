@@ -18,16 +18,10 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
 	$(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml
 
-# USB
-# Default Property Overrides
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.config.zram=true
-
 # KSM
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.model=SM-G530FZ \
-	ro.product.device=gprimeltexx \
-	ro.config.zram=true
+	ro.product.device=gprimeltexx
 
 # These are the hardware-specific settings that are stored in system properties.
 # Note that the only such settings should be the ones that are too low-level to
