@@ -36,6 +36,7 @@ PRODUCT_COPY_FILES += \
 
 # KSM
 PRODUCT_PROPERTY_OVERRIDES += \
+	ro.telephony.default_network=10 \
 	ro.product.model=SM-G530FZ \
 	ro.product.device=gprimeltexx
 
