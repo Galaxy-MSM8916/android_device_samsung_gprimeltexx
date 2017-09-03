@@ -92,9 +92,6 @@ vendor/lib/libqmi.so
 vendor/lib/lib-sec-disp.so
 
 # RIL
-bin/rild
-lib/libril.so
-lib/librilutils.so
 lib/libsec-ril.so
 
 # Sensors
