@@ -96,5 +96,5 @@ lib/libsec-ril.so|80e49ddb4f97010cc884e0cffc59d2b4
 
 # Sensors
 etc/calib_SI_matrix_data_file.dat
-lib/hw/sensors.msm8916.so
+lib/hw/sensors.msm8916.so:lib/hw/sensors.vendor.msm8916.so
 lib/libalgobsx.so
